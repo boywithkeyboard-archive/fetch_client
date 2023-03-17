@@ -1,0 +1,14 @@
+{
+  "name": "@azury/fetch",
+  "version": "0.0.0",
+  "author": "Samuel Kopp",
+  "license": "Private",
+  "main": "index.js",
+  "exports": "./index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "type": "module"
+}
