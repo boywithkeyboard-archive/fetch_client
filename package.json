@@ -1,6 +1,6 @@
 {
   "name": "@azury/fetch",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Samuel Kopp",
   "license": "Private",
   "main": "index.js",
