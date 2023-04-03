@@ -5,7 +5,7 @@ Deno.test('client', async () => {
   const client = new fetch()
 
   const customClient = new fetch({
-    base: 'https://gist.githubusercontent.com/unvented',
+    base: 'https://gist.githubusercontent.com/boywithkeyboard',
   })
 
   // invalid
