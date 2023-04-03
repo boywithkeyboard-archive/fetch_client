@@ -10,7 +10,7 @@ type Data =
   | ArrayBuffer
   | ReadableStream<Uint8Array>
 
-class Fetcher {
+class fetch {
   private base: string | undefined
   private headers: Record<string, string> | undefined
 
@@ -56,6 +56,7 @@ class Fetcher {
         | 'json'
         | 'buffer'
         | 'stream'
+        | 'none'
     },
   ): Promise<
     {
@@ -64,7 +65,8 @@ class Fetcher {
         // deno-lint-ignore no-explicit-any
           ? Record<string, any>
         : T extends 'buffer' ? ArrayBuffer
-        : ReadableStream<Uint8Array>
+        : T extends 'stream' ? ReadableStream<Uint8Array>
+        : null
       error: undefined
       code: number
       ok: true
@@ -95,7 +97,7 @@ class Fetcher {
         }
       }
 
-      const res = await fetch(this.base ? `${this.base}${url}` : url, {
+      const res = await globalThis.fetch(this.base ? `${this.base}${url}` : url, {
         ...(body && { body }),
         method,
         headers: {
@@ -329,4 +331,4 @@ class Fetcher {
   }
 }
 
-export default Fetcher
+export default fetch
