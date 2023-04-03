@@ -97,15 +97,18 @@ class fetch {
         }
       }
 
-      const res = await globalThis.fetch(this.base ? `${this.base}${url}` : url, {
-        ...(body && { body }),
-        method,
-        headers: {
-          ...(type && { 'content-type': type }),
-          ...options.headers,
-          ...this.headers,
+      const res = await globalThis.fetch(
+        this.base ? `${this.base}${url}` : url,
+        {
+          ...(body && { body }),
+          method,
+          headers: {
+            ...(type && { 'content-type': type }),
+            ...options.headers,
+            ...this.headers,
+          },
         },
-      })
+      )
 
       const headers: Record<string, string> = {}
 
