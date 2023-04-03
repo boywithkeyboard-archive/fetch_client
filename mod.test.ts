@@ -1,4 +1,4 @@
-import { assertEquals } from 'https://deno.land/std@v0.180.0/testing/asserts.ts'
+import { assertEquals } from 'https://deno.land/std@v0.182.0/testing/asserts.ts'
 import fetch from './mod.ts'
 
 Deno.test('client', async () => {
