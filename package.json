@@ -1,8 +1,9 @@
 {
   "name": "@azury/fetch",
-  "version": "0.1.0",
-  "author": "Samuel Kopp",
-  "license": "Private",
+  "version": "0.2.0",
+  "author": "Samuel Kopp (https://samuelkopp.de)",
+  "license": "Apache-2.0",
+  "description": "azury's fetch client",
   "main": "index.js",
   "exports": "./index.js",
   "types": "index.d.ts",
