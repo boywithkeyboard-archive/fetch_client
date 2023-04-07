@@ -3,6 +3,7 @@ type Type =
   | 'json'
   | 'buffer'
   | 'stream'
+  | 'none'
 
 type Data =
   | string
