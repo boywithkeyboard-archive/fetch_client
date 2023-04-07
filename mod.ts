@@ -120,6 +120,10 @@ class fetch {
       const def = { code: res.status, ok: res.ok, headers }
 
       if (res.ok) {
+        if (options.type === 'none') {
+          await res.body?.cancel()
+        }
+
         const data = options.type === 'buffer'
           ? await res.arrayBuffer()
           : options.type === 'json'
