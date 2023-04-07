@@ -5,11 +5,13 @@ type Type =
   | 'stream'
   | 'none'
 
+type Stream = ReadableStream<Uint8Array>
+
 type Data =
   | string
   | Record<string, unknown>
   | ArrayBuffer
-  | ReadableStream<Uint8Array>
+  | Stream
 
 class fetch {
   private base: string | undefined
@@ -34,7 +36,7 @@ class fetch {
             // deno-lint-ignore no-explicit-any
               ? Record<string, any>
             : T extends 'buffer' ? ArrayBuffer
-            : ReadableStream<Uint8Array>
+            : Stream
           code: number
           headers: Record<string, string>
         },
@@ -51,13 +53,8 @@ class fetch {
         | string
         | Record<string, unknown>
         | ArrayBuffer
-        | ReadableStream<Uint8Array>
-      type:
-        | 'text'
-        | 'json'
-        | 'buffer'
-        | 'stream'
-        | 'none'
+        | Stream
+      type: Type
     },
   ): Promise<
     {
@@ -66,7 +63,7 @@ class fetch {
         // deno-lint-ignore no-explicit-any
           ? Record<string, any>
         : T extends 'buffer' ? ArrayBuffer
-        : T extends 'stream' ? ReadableStream<Uint8Array>
+        : T extends 'stream' ? Stream
         : null
       error: undefined
       code: number
@@ -184,7 +181,7 @@ class fetch {
             // deno-lint-ignore no-explicit-any
               ? Record<string, any>
             : T extends 'buffer' ? ArrayBuffer
-            : ReadableStream<Uint8Array>)
+            : Stream)
           | undefined
         code: number
         headers: Record<string, string>
@@ -213,7 +210,7 @@ class fetch {
             // deno-lint-ignore no-explicit-any
               ? Record<string, any>
             : T extends 'buffer' ? ArrayBuffer
-            : ReadableStream<Uint8Array>)
+            : Stream)
           | undefined
         code: number
         headers: Record<string, string>
@@ -242,7 +239,7 @@ class fetch {
             // deno-lint-ignore no-explicit-any
               ? Record<string, any>
             : T extends 'buffer' ? ArrayBuffer
-            : ReadableStream<Uint8Array>)
+            : Stream)
           | undefined
         code: number
         headers: Record<string, string>
@@ -271,7 +268,7 @@ class fetch {
             // deno-lint-ignore no-explicit-any
               ? Record<string, any>
             : T extends 'buffer' ? ArrayBuffer
-            : ReadableStream<Uint8Array>)
+            : Stream)
           | undefined
         code: number
         headers: Record<string, string>
@@ -300,7 +297,7 @@ class fetch {
             // deno-lint-ignore no-explicit-any
               ? Record<string, any>
             : T extends 'buffer' ? ArrayBuffer
-            : ReadableStream<Uint8Array>)
+            : Stream)
           | undefined
         code: number
         headers: Record<string, string>
