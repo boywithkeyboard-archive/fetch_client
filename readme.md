@@ -1,16 +1,26 @@
 ## fetch
 
-#### Setup
+### Setup
+
+#### Deno
+
+```ts
+import fetch from 'https://deno.land/x/fetch_client@v0.6.0/mod.ts'
+```
+
+#### Node.js
 
 ```bash
 npm i @azury/fetch
 ```
 
-#### Usage
-
 ```ts
 import fetch from '@azury/fetch'
+```
 
+### Usage
+
+```ts
 const client = new fetch()
 
 // optionally, you can specify global headers and a base path
