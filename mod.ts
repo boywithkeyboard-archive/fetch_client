@@ -34,7 +34,7 @@ class fetch {
           data: T extends 'text' ? string
             : T extends 'json'
             // deno-lint-ignore no-explicit-any
-              ? Record<string, any>
+              ? any
             : T extends 'buffer' ? ArrayBuffer
             : Stream
           code: number
@@ -61,7 +61,7 @@ class fetch {
       data: T extends 'text' ? string
         : T extends 'json'
         // deno-lint-ignore no-explicit-any
-          ? Record<string, any>
+          ? any
         : T extends 'buffer' ? ArrayBuffer
         : T extends 'stream' ? Stream
         : null
@@ -179,7 +179,7 @@ class fetch {
           | (T extends 'text' ? string
             : T extends 'json'
             // deno-lint-ignore no-explicit-any
-              ? Record<string, any>
+              ? any
             : T extends 'buffer' ? ArrayBuffer
             : Stream)
           | undefined
@@ -208,7 +208,7 @@ class fetch {
           | (T extends 'text' ? string
             : T extends 'json'
             // deno-lint-ignore no-explicit-any
-              ? Record<string, any>
+              ? any
             : T extends 'buffer' ? ArrayBuffer
             : Stream)
           | undefined
@@ -237,7 +237,7 @@ class fetch {
           | (T extends 'text' ? string
             : T extends 'json'
             // deno-lint-ignore no-explicit-any
-              ? Record<string, any>
+              ? any
             : T extends 'buffer' ? ArrayBuffer
             : Stream)
           | undefined
@@ -266,7 +266,7 @@ class fetch {
           | (T extends 'text' ? string
             : T extends 'json'
             // deno-lint-ignore no-explicit-any
-              ? Record<string, any>
+              ? any
             : T extends 'buffer' ? ArrayBuffer
             : Stream)
           | undefined
@@ -295,7 +295,7 @@ class fetch {
           | (T extends 'text' ? string
             : T extends 'json'
             // deno-lint-ignore no-explicit-any
-              ? Record<string, any>
+              ? any
             : T extends 'buffer' ? ArrayBuffer
             : Stream)
           | undefined
