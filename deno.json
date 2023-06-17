@@ -7,7 +7,7 @@
   },
   "tasks": {
     "test": "deno test -A --fail-fast",
-    "build": "npx -p typescript tsc --target esnext --module es2022 --lib \"dom,dom.iterable,esnext\" --declaration --emitDeclarationOnly --outDir types --newLine lf mod.ts && cp types/mod.d.ts index.d.ts && rm -rf types && deno run -A https://deno.land/x/esbuild@v0.17.19/mod.js mod.ts --bundle --minify --allow-overwrite --format=esm --banner:\"js=// deno-fmt-ignore-file\n// deno-lint-ignore-file\" --outfile=index.js && deno run -A .github/build.ts",
+    "build": "npx -p typescript tsc --target esnext --module es2022 --lib \"dom,dom.iterable,esnext\" --declaration --emitDeclarationOnly --outDir types --newLine lf mod.ts && cp types/mod.d.ts index.d.ts && rm -rf types && deno run -A https://deno.land/x/esbuild@v0.18.4/mod.js mod.ts --bundle --minify --allow-overwrite --format=esm --banner:\"js=// deno-fmt-ignore-file\n// deno-lint-ignore-file\" --outfile=index.js && deno run -A .github/build.ts",
     "publish": "deno task test && deno task build && npm version minor && deno fmt && npm publish --access public && rm index.d.ts index.js deno.lock"
   }
 }
